@@ -6,14 +6,14 @@ import constants as c
 
 LENGTH_UNITS = ["centimeters", "meters", "kilometers", "inches", "feet", "yards", "miles"]
 ENERGY_UNITS = ["joules", "volts", "calories"]
-MASS_UNITS   = ["milligrams", "grams", "kilograms", "ounces", "pounds", "tons"]
+WEIGHT_UNITS = ["milligrams", "grams", "kilograms", "ounces", "pounds", "tons"]
 DATA_UNITS   = ["bits", "bytes", "kilobytes", "megabytes", "gigabytes", "terabytes"]
 TIME_UNITS   = ["milliseconds", "seconds", "minutes", "hours", "days", "weeks", "years"]
 TEMP_UNITS   = ["fahrenheit", "celcius"]
 
 CONVERSION_FUNCS = {
 	"length": cf.convert_length,
-	"mass": None,
+	"weight": cf.convert_weight,
 	"energy": cf.convert_energy,
 	"temperature": cf.convert_temp,
 	"time": cf.convert_time,
@@ -21,8 +21,12 @@ CONVERSION_FUNCS = {
 }
 
 
-def open_win(conversion_val, unit_options):
-	root = Toplevel()
+def open_win(conversion_val, unit_options, main=False):
+	if main:
+		root = Tk()
+	else:
+		root = Toplevel()
+
 	c.root_config(root, f"{conversion_val} Converter")
 
 	main_font = font.Font(family=c.MAIN_FONT, size=c.SMALL_SIZE, weight="bold")
@@ -125,4 +129,4 @@ def open_win(conversion_val, unit_options):
 
 
 if __name__ == "__main__":
-	pass
+	open_win("Length", LENGTH_UNITS, main=True)

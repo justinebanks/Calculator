@@ -23,6 +23,7 @@ def main():
 		"Time": lambda: conversion.open_win("Time", conversion.TIME_UNITS),
 		"Energy": lambda: conversion.open_win("Energy", conversion.ENERGY_UNITS),
 		"Data": lambda: conversion.open_win("Data", conversion.DATA_UNITS),
+		"Weight": lambda: conversion.open_win("Weight", conversion.WEIGHT_UNITS),
 		"History": history.open_win,
 	}
 

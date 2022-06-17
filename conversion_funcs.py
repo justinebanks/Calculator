@@ -129,6 +129,41 @@ def convert_data(from_, to, val):
 	return ans
 
 
+def convert_weight(from_, to, val):
+	if   (from_ == "milligrams")  and (to == "grams"):         ans = val * 0.001
+	elif (from_ == "milligrams")  and (to == "kilograms"):     ans = val * 0.000001
+	elif (from_ == "milligrams")  and (to == "ounces"):        ans = val * 0.000035
+	elif (from_ == "milligrams")  and (to == "pounds"):        ans = val * 0.000002
+	elif (from_ == "milligrams")  and (to == "tons"):          ans = val * 0.000000001102311
+	elif (from_ == "grams")       and (to == "milligrams"):    ans = val * 1000
+	elif (from_ == "grams")       and (to == "kilograms"):     ans = val * 0.001
+	elif (from_ == "grams")       and (to == "ounces"):        ans = val * 0.035274
+	elif (from_ == "grams")       and (to == "pounds"):        ans = val * 0.002205
+	elif (from_ == "grams")       and (to == "tons"):          ans = val * 0.000001
+	elif (from_ == "kilograms")   and (to == "milligrams"):    ans = val * 1000000
+	elif (from_ == "kilograms")   and (to == "grams"):         ans = val * 1000
+	elif (from_ == "kilograms")   and (to == "ounces"):        ans = val * 35.27396
+	elif (from_ == "kilograms")   and (to == "pounds"):        ans = val * 2.204623
+	elif (from_ == "kilograms")   and (to == "tons"):          ans = val * 0.001102
+	elif (from_ == "ounces")      and (to == "milligrams"):    ans = val * 28349.52
+	elif (from_ == "ounces")      and (to == "grams"):         ans = val * 28.34952
+	elif (from_ == "ounces")      and (to == "kilograms"):     ans = val * 0.02835
+	elif (from_ == "ounces")      and (to == "pounds"):        ans = val * 0.0625
+	elif (from_ == "ounces")      and (to == "tons"):          ans = val * 0.000031
+	elif (from_ == "pounds")      and (to == "milligrams"):    ans = val * 453592.4
+	elif (from_ == "pounds")      and (to == "grams"):         ans = val * 453.5924
+	elif (from_ == "pounds")      and (to == "kilograms"):     ans = val * 0.453592
+	elif (from_ == "pounds")      and (to == "ounces"):        ans = val * 16
+	elif (from_ == "pounds")      and (to == "tons"):          ans = val * 0.0005
+	elif (from_ == "tons")        and (to == "milligrams"):    ans = val * 907184740
+	elif (from_ == "tons")        and (to == "grams"):         ans = val * 907184.7
+	elif (from_ == "tons")        and (to == "kilograms"):     ans = val * 907.1847
+	elif (from_ == "tons")        and (to == "ounces"):        ans = val * 32000
+	elif (from_ == "tons")        and (to == "pounds"):        ans = val * 2000
+	else: ans = val
+	return ans
+
+
 def convert_energy(from_, to, val):
 	if   (from_ == "joules")       and (to == "volts"):        ans = val * 6.241509e+18
 	elif (from_ == "joules")       and (to == "calories"):     ans = val * 0.000239

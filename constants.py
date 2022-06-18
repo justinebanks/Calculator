@@ -52,7 +52,12 @@ def root_config(win, title, size=(320,470)):
 	win.config(bg=BACKGROUND)
 	win.title(title)
 	win.attributes("-alpha", 0.9)
-	win.iconbitmap("calculator_icon.ico")
+
+	try:
+		win.iconbitmap("calculator_icon.ico")
+	except Exception:
+		pass
+	
 	win.minsize(x, y)
 	win.maxsize(x, y)
 
